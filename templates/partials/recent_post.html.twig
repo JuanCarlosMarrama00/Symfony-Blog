@@ -1,0 +1,43 @@
+ <div class="post">
+    <hr>
+        <a href="{{ path('single_post', {'slug':recent.slug}) }}">{{ recent.title }}</a>
+        <h5> By <span>{{ recent.User.name }}</span></h5>
+        <p>{{ recent.publishedAt | date('d') }} {{ recent.publishedAt | date('F') }}</p>
+        <p><i class="fa fa-clock-o sr-icons"></i>
+         {{ recent.publishedAt | date('h') }}
+         {{ recent.publishedAt | date('A') }}
+         </p>
+</div>
+
+
+{# <div class="post">
+	<div class="post-heading">
+		<span>{{ recent.publishedAt | date('d') }}
+			{{ recent.publishedAt | date('F') }}</span>
+		<img class="img-responsive" src="{{ asset('images/index/gallery/' ~ recent.image) }}" alt="{{recent.title}}" width="300">
+		<div class="post-body">
+			<h3>
+				<a href="{{ path('single_post', {'slug':recent.slug}) }}">
+					<strong>{{recent.title}}</strong>
+				</a>
+			</h3>
+		</div>
+		<div class="post-footer">
+			<span>
+				<i class="fa fa-heart sr-icons"></i>
+				{{recent.numLikes}}
+				<i class="fa fa-comments sr-icons"></i>
+				{{recent.numComments}}
+			</span>
+		</div>
+	</div> #}
+	{# <div class="post">
+		    <hr>
+		        <a href="{{ path('single_post', {'slug':recent.slug}) }}">{{ recent.title }}</a>
+		        <h5> By <span>{{ recent.user.name }}</span></h5>
+		        <p>{{ recent.publishedAt | date('d') }} {{ recent.publishedAt | date('F') }}</p>
+		        <p><i class="fa fa-clock-o sr-icons"></i> 
+		         {{ recent.publishedAt | date('h') }} 
+		         {{ recent.publishedAt | date('A') }}
+		         </p>
+		</div> #}

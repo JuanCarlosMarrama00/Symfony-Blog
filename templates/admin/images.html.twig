@@ -1,0 +1,51 @@
+{% extends 'base.html.twig' %}
+{% block title%}Images{% endblock %}
+{% block body%}
+<!-- Principal Content Start -->
+   <div id="images">
+   	  <div class="container">
+   	    <div class="col-xs-12 col-sm-8 col-sm-push-2">
+       	   <h1>Images</h1>
+			   {{ form(form, {'attr': {'class':'form-horizontal'}}) }}
+       	   <hr class="divider">
+		   <div>
+				<table class="table">
+					<thead>
+					<tr>
+						<th scope="col">#</th>
+						<th scope="col">File</th>
+						<th scope="col">Views</th>
+						<th scope="col">Likes</th>
+						<th scope="col">Downloads</th>
+						<th scope="col">Category</th>
+					</tr>
+					</thead>
+					<tbody>
+					{% for image in images %}
+					<tr>
+						<th scope="row">{{ image.id }}</th>
+						<td>
+							<img style='width:150px;' src='{{ asset('images/index/gallery/' ~ image.file) }}'>
+						</td>
+						<td>
+							{{ image.numViews }}
+						</td>
+						<td>
+							{{ image.numLikes }}
+						</td>
+						<td>
+							{{ image.numDownloads }}
+						</td>		
+						<td>
+							{{ image.category.name }}
+						</td>					
+					</tr>
+					{% endfor %}
+					</tbody>
+				</table>
+			</div>
+       	</div>   
+   	  </div>
+   </div>
+<!-- Principal Content Start -->
+{% endblock %}
